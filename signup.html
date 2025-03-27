@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Website</title>
+    <!-- Customize STYLESHEET -->
+    <link rel = "stylesheet" href = "./style.css">
+    <!-- Iconscout CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- Google Font Montseret-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+    
+</head>
+<body>
+    
+ <section class="form_section">
+    <div class="container form_section-container">
+        <h2>Sign Up</h2>
+        <!-- Alert message for errors (optional) -->
+        <?php if (isset($errorMessage)): ?>
+        <div class="alert_message error">
+            <p><?php echo $errorMessage; ?></p>
+        </div>
+        <?php endif; ?>
+
+        <form action="signup.php" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Create Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <div class="form_control">
+                <label for="avatar">Upload Avatar (Optional)</label>
+                <input type="file" id="avatar" name="avatar" accept="image/*">
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <small>Already have an account? <a href="signin.php">Sign In</a></small>
+        </form>
+    </div>
+</section>
+
+ </body>
+ </html>
